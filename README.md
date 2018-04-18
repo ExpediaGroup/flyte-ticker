@@ -24,13 +24,13 @@ for available targets.
 ## Configuration
 
 The plugin is configured using environment variables:
-```
+
 ENV VAR                          | Default  |  Description                               | Example               
  ------------------------------- |  ------- |  ----------------------------------------- |  ---------------------
 FLYTE_API                        | -        | The API endpoint to use                    | http://localhost:8080
 FLYTE_API_TIMEOUT                | 10 secs  | Combined timeout for accessing the API     | 20
 FLYTE_LABELS                     | -        | Labels to disambiguate this instance       | env=staging,bar=foo
-```
+
 
 ## Example Flow
 
