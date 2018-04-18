@@ -1,5 +1,7 @@
 # flyte-ticker
 
+![Build Status](https://travis-ci.org/HotelsDotCom/flyte-ticker.svg?branch=master)
+
 A simple ticker pack for Flyte. Emits a "Tick" event every minute which can be
 used in flows for cron like behaviour. The event looks like this:
 
