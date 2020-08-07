@@ -1,6 +1,6 @@
 # flyte-ticker
 
-![Build Status](https://travis-ci.org/HotelsDotCom/flyte-ticker.svg?branch=master)
+![Build Status](https://travis-ci.org/ExpediaGroup/flyte-ticker.svg?branch=master)
 [![Docker Stars](https://img.shields.io/docker/stars/hotelsdotcom/flyte-ticker.svg)](https://hub.docker.com/r/hotelsdotcom/flyte-ticker)
 [![Docker Pulls](https://img.shields.io/docker/pulls/hotelsdotcom/flyte-ticker.svg)](https://hub.docker.com/r/hotelsdotcom/flyte-ticker)
 
