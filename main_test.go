@@ -17,10 +17,10 @@ limitations under the License.
 package main
 
 import (
-	"testing"
-	"github.com/stretchr/testify/assert"
 	"github.com/HotelsDotCom/flyte-client/flyte"
+	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"testing"
 	"time"
 )
 
@@ -28,9 +28,9 @@ func TestPackDef(t *testing.T) {
 	pd := getPackDef()
 	assert.Equal(t, "Ticker", pd.Name)
 	assert.Equal(t, 0, len(pd.Labels))
-	assert.Equal(t, []flyte.EventDef{{Name:"Tick"}}, pd.EventDefs)
+	assert.Equal(t, []flyte.EventDef{{Name: "Tick"}}, pd.EventDefs)
 	assert.Equal(t, 0, len(pd.Commands))
-	assert.Equal(t, "https://github.com/HotelsDotCom/flyte-ticker/blob/master/README.md", pd.HelpURL.String())
+	assert.Equal(t, "https://github.com/ExpediaGroup/flyte-ticker/blob/master/README.md", pd.HelpURL.String())
 }
 
 func TestShouldSendTickEventsOnTickEvents(t *testing.T) {
@@ -46,18 +46,18 @@ func TestShouldSendTickEventsOnTickEvents(t *testing.T) {
 
 		assert.Equal(t, "Tick", event.EventDef.Name)
 		assert.Nil(t, event.EventDef.HelpURL)
-		assert.Equal(t, tickEvent{Time:now}, event.Payload)
+		assert.Equal(t, tickEvent{Time: now}, event.Payload)
 
 		return nil
 	}
 
-	ticker := &time.Ticker{C:ch}
+	ticker := &time.Ticker{C: ch}
 	go sendTickEvents(ticker, pack)
 
 	ch <- now
 
 	require.NotEmpty(t, receivedEvents)
-	assert.Contains(t, receivedEvents, flyte.Event{EventDef:flyte.EventDef{Name:"Tick"}, Payload:tickEvent{Time:now}})
+	assert.Contains(t, receivedEvents, flyte.Event{EventDef: flyte.EventDef{Name: "Tick"}, Payload: tickEvent{Time: now}})
 }
 
 type MockPack struct {

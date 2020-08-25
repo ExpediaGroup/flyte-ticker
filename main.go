@@ -17,11 +17,11 @@ limitations under the License.
 package main
 
 import (
-	"net/url"
 	api "github.com/HotelsDotCom/flyte-client/client"
+	"github.com/HotelsDotCom/flyte-client/config"
 	"github.com/HotelsDotCom/flyte-client/flyte"
 	"github.com/HotelsDotCom/go-logger"
-	"github.com/HotelsDotCom/flyte-client/config"
+	"net/url"
 	"time"
 )
 
@@ -37,10 +37,10 @@ func main() {
 }
 
 func getPackDef() flyte.PackDef {
-	hu, _ := url.Parse("https://github.com/HotelsDotCom/flyte-ticker/blob/master/README.md")
+	hu, _ := url.Parse("https://github.com/ExpediaGroup/flyte-ticker/blob/master/README.md")
 	return flyte.PackDef{
-		Name:    "Ticker",
-		HelpURL: hu,
+		Name:      "Ticker",
+		HelpURL:   hu,
 		EventDefs: []flyte.EventDef{tickEventDef},
 	}
 }
